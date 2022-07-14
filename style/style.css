@@ -1,0 +1,187 @@
+@import "../font/Roboto/stylesheet.css";
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: normal;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #C0DBD9;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container {
+  background: #7FAFF6;
+  height: 100px;
+}
+
+.modal {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  transform: translateY(-30%);
+  transition: opacity 0.2s linear, transform 0.5s ease, z-index 0.2s;
+  background: #fff;
+}
+@media all and (max-width: 480px) {
+  .modal {
+    width: calc(100% - 30px);
+  }
+}
+.modal__header {
+  padding: 15px;
+  text-align: right;
+}
+.modal__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal__close {
+  width: 43px;
+  height: 39px;
+  font-size: 20px;
+  background: #7FAFF6;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 39px;
+  text-align: center;
+  color: #ffffff;
+}
+.modal .text {
+  font-size: 53px;
+}
+
+.pup-up {
+  height: 100px;
+  background: #7FAFF6;
+  padding: 30px;
+}
+.pup-up__open {
+  height: 39px;
+  width: 206px;
+  border-radius: 5px;
+  line-height: 39px;
+  text-align: center;
+  background: #A5C7F9;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+}
+.pup-up__input {
+  display: none;
+}
+.pup-up__input:checked ~ .modal {
+  transform: translateY(0%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.content-block {
+  width: 100%;
+  height: 198px;
+  background: #8AD191;
+  position: relative;
+}
+.content-block::before {
+  content: attr(data-num);
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: inline-block;
+  right: 0;
+  left: 0;
+  width: 30px;
+  height: 60px;
+  font-size: 53px;
+}
+.content-block:nth-child(1) {
+  grid-area: num-1;
+}
+.content-block:nth-child(2) {
+  grid-area: num-2;
+}
+.content-block:nth-child(3) {
+  grid-area: num-3;
+}
+.content-block:nth-child(4) {
+  grid-area: num-4;
+}
+.content-block:nth-child(5) {
+  grid-area: num-5;
+}
+
+.content .wrapper {
+  display: grid;
+  grid-gap: 15px;
+  padding-top: 15px;
+  margin-bottom: 100px;
+}
+
+.content-blocks {
+  background: #B3F95A;
+  display: grid;
+  grid-gap: 15px;
+  grid-template: repeat(2, auto)/repeat(6, 1fr);
+  grid-template-areas: "num-1 num-1 num-2 num-2 num-2 num-3" "num-4 num-4 num-4 num-4 num-4 num-5";
+}
+@media all and (max-width: 768px) {
+  .content-blocks {
+    grid-template-areas: "num-1 num-1 num-1 num-2 num-2 num-2" "num-3 num-3 num-3 num-4 num-4 num-4" "num-5 num-5 num-5 num-5 num-5 num-5";
+  }
+}
+@media all and (max-width: 480px) {
+  .content-blocks {
+    grid-template-areas: "num-1 num-1 num-1 num-1 num-1 num-1" "num-2 num-2 num-2 num-2 num-2 num-2" "num-3 num-3 num-3 num-3 num-3 num-3" "num-4 num-4 num-4 num-4 num-4 num-4" "num-5 num-5 num-5 num-5 num-5 num-5";
+  }
+}
+
+.content-squares {
+  display: grid;
+  grid-gap: 30px;
+  padding: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  background: #88B5BF;
+}
+
+.square {
+  max-width: 255px;
+  width: 100%;
+  height: calc(21.3vw / 1.2814);
+  max-height: 199px;
+  background: #0D89B0;
+}
+
+/*# sourceMappingURL=style.css.map */

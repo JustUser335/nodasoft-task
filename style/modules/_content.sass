@@ -1,0 +1,60 @@
+.content-block
+  width: 100%
+  height: 198px
+  background: #8AD191
+  position: relative
+  &::before
+    content: attr(data-num)
+    color: #ffffff
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    display: inline-block
+    right: 0
+    left: 0
+    width: 30px
+    height: 60px
+    font-size: 53px
+  &:nth-child(1)
+    grid-area: num-1
+  &:nth-child(2)
+    grid-area: num-2
+  &:nth-child(3)
+    grid-area: num-3
+  &:nth-child(4)
+    grid-area: num-4
+  &:nth-child(5)
+    grid-area: num-5
+
+.content
+  .wrapper
+    display: grid
+    grid-gap: 15px
+    padding-top: 15px
+    margin-bottom: 100px
+
+.content-blocks
+  background: $green
+  display: grid
+  grid-gap: 15px
+  grid-template: repeat(2, auto) / repeat(6, 1fr)
+  grid-template-areas: "num-1 num-1 num-2 num-2 num-2 num-3" "num-4 num-4 num-4 num-4 num-4 num-5"
+  @media all and (max-width: 768px)
+    grid-template-areas: "num-1 num-1 num-1 num-2 num-2 num-2" "num-3 num-3 num-3 num-4 num-4 num-4" "num-5 num-5 num-5 num-5 num-5 num-5"
+  @media all and (max-width: 480px)
+    grid-template-areas: "num-1 num-1 num-1 num-1 num-1 num-1" "num-2 num-2 num-2 num-2 num-2 num-2" "num-3 num-3 num-3 num-3 num-3 num-3" "num-4 num-4 num-4 num-4 num-4 num-4" "num-5 num-5 num-5 num-5 num-5 num-5"
+
+.content-squares
+  display: grid
+  grid-gap: 30px
+  padding: 30px
+  grid-template-columns: repeat(4, 1fr)
+  background: $hue3
+
+.square
+  max-width: 255px
+  width: 100%
+  height: calc(21.3vw / 1.2814)
+  max-height: 199px
+  background: $hue4

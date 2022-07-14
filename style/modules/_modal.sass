@@ -1,0 +1,60 @@
+.modal
+  width: 100%
+  max-width: 400px
+  height: 400px
+  flex-direction: column
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  opacity: 0
+  z-index: -1
+  display: flex
+  transform: translateY(-30%)
+  transition: opacity .2s linear, transform .5s ease, z-index .2s
+  background: #fff
+  @media all and (max-width: 480px)
+    width: calc(100% - 30px)
+  &__header
+    padding: 15px
+    text-align: right
+  &__content
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+  &__close
+    width: 43px
+    height: 39px
+    font-size: 20px
+    background: $blue
+    border-radius: 5px
+    display: inline-block
+    line-height: 39px
+    text-align: center
+    color: #ffffff
+  .text
+    font-size: 53px
+.pup-up
+  height: 100px
+  background: $blue
+  padding: 30px
+  &__open
+    height: 39px
+    width: 206px
+    border-radius: 5px
+    line-height: 39px
+    text-align: center
+    background: $blue-light
+    display: inline-block
+    color: #ffffff
+    font-size: 20px
+  &__input
+    display: none
+    &:checked
+      ~ .modal
+        transform: translateY(-0%)
+        opacity: 1
+        z-index: 2
