@@ -46,15 +46,16 @@
     grid-template-areas: "num-1 num-1 num-1 num-1 num-1 num-1" "num-2 num-2 num-2 num-2 num-2 num-2" "num-3 num-3 num-3 num-3 num-3 num-3" "num-4 num-4 num-4 num-4 num-4 num-4" "num-5 num-5 num-5 num-5 num-5 num-5"
 
 .content-squares
-  display: grid
-  grid-gap: 30px
+  display: flex
+  flex-wrap: wrap
+  gap: 30px
+  justify-content: center
   padding: 30px
-  grid-template-columns: repeat(4, 1fr)
   background: $hue3
 
 .square
   max-width: 255px
-  width: 100%
-  height: calc(21.3vw / 1.2814)
+  width: 21.25vw
+  height: 16.583vw
   max-height: 199px
   background: $hue4
